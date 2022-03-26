@@ -59,7 +59,6 @@ exports.getAllCompany = (async (req, res, next) => {
         const companysCount = await Company.countDocuments()
         const apiFeature = new ApiFeature(Company.find(), req.query)
             .search()
-            .filter()
         // .pagination(resultPerPage)
         let companys = await apiFeature.query;
         let filteredcompanysCount = companys.length
